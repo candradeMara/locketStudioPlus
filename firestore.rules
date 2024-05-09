@@ -1,0 +1,125 @@
+rules_version = "2";
+
+// service cloud.firestore {
+//   match /databases/{database}/documents {
+//     match /{document=**} {
+//       allow read;
+//       allow write;
+//     }
+//   }
+// }
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // HELPERS
+    function incomingData() {
+      return request.resource.data;
+    }
+    function existingData() {
+      return resource.data;
+    }
+    function getRole() {
+      return request.auth.token.role;
+    }
+    function getAuthId() {
+      return request.auth.uid
+    }
+    function getAccount() {
+      return request.auth.token.account;
+    }
+    function isSignedIn() {
+      return getAuthId() != null;
+    }
+    // function emailVerified() {
+    //   return request.auth.token.email_verified;
+    // }
+    function isAccountAdmin() {
+      return getRole() == 'account_admin' || getRole() == 'marathon_admin'
+    }
+    function isAdmin() {
+      return getRole() == 'marathon_admin' || (getRole() == 'account_admin'  && getAccount() == 'marathon')
+    }
+    function allowCreateFields(fields) {
+      return incomingData().keys().hasOnly(fields);
+    }
+    // function allowUpdateFields(fields) {
+    //   return incomingData().diff(existingData()).affectedKeys().hasOnly(fields);
+    // }
+
+
+    // App
+    match /app/{document=**} {
+      allow read;
+      allow write: if isAdmin();
+    }
+
+    // Products
+    match /products/{productId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // Accounts
+    match /accounts/{accountId} {
+    	allow read: if getAccount() == accountId || isAdmin();
+      allow write: if isAdmin()
+    }
+
+    // Users
+    match /accounts/{accountId}/users/{userId} {
+    	allow read: if getAuthId() == userId || isAdmin();
+      allow read: if isAccountAdmin() && getAccount() == accountId;
+
+      // allow users to update their own email, name_first, and name_last
+      // TODO: restrict which fields they can update themselves.
+      allow update: if (isAccountAdmin() && getAccount() == accountId)
+      allow update: if getAuthId() == userId
+      allow create: if (isAccountAdmin() && getAccount() == accountId && allowCreateFields(['email','name','role']))
+      allow write: if (isAccountAdmin() && getAccount() == accountId);
+    }
+    match /accounts/{accountId}/ordered/items {
+      allow read: if getAccount() == accountId || isAdmin();
+      allow write: if isAdmin()
+    }
+
+    // Orders
+    match /accounts/{accountId}/orders/{orderId} {
+    	allow read: if getAuthId() == existingData().buyer.uid;
+      allow read: if isAccountAdmin() && getAccount() == accountId;
+      allow create: if getAuthId() == incomingData().buyer.uid;
+      allow write: if isAdmin();
+    }
+
+    // Notifications
+    match /notifications/{notificationId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // Downloads
+    // TODO: secure read rules to check for userId
+    match /downloads_product/{productId} {
+      allow create: if isSignedIn();
+      allow read, write: if isAdmin();
+    }
+
+    match /downloads_user/{userId} {
+      allow write: if isSignedIn();
+      allow read, write: if isAdmin();
+    }
+
+    // Fallback
+    match /accounts/{accountId} {
+      allow read;
+    }
+    match /accounts/{accountId}/{document=**} {
+      allow read: if accountId == request.auth.token.account
+    }
+
+    match /{document=**} {
+    	// give admins access to everything
+    	allow read, write: if isAdmin();
+      // allow read, write;
+    }
+  }
+}

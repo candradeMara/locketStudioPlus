@@ -1,0 +1,86 @@
+[{"slug": "shop", "label": "Products", "collections": [
+  {"slug": "children",
+  "label": "Kiddie Kraft",
+  "items": [
+    {"slug": "baby-gifts","label": "Baby Gifts"},
+    {"slug": "bar-pin","label": "Bar Pin"},
+    {"slug": "bracelets","label": "Bracelets"},
+    {"slug": "crosses","label": "Crosses"},
+    {"slug": "earrings","label": "Earrings"},
+    {"slug": "lockets","label": "Lockets"},
+    {"slug": "pendants","label": "Pendants"},
+    {"slug": "religious","label": "Religious"},
+    {"slug": "rings","label": "Rings"},
+    {"slug": "sets", "label": "Sets"}
+  ]},
+  {"slug": "adult",
+  "label": "Adult Essentials",
+  "items": [
+    {"slug": "bracelets", "label": "Bracelets"},
+    {"slug": "charm-bracelets", "label": "Charm Bracelets"},
+    {"slug": "crosses", "label": "Crosses"},
+    {"slug": "lockets", "label": "Lockets"},
+    {"slug": "medic-alert", "label": "Medic Alert"},
+    {"slug": "pendants", "label": "Pendants"},
+    {"slug": "religious", "label": "Religious"}
+  ]},
+  {"slug": "cape-cod",
+  "label": "Cape Cod Collection",
+  "items": [
+    {"slug": "ankelts", "label": "Cape Cod Ankelets"},
+    {"slug": "bracelets", "label": "Cape Cod Bracelets"},
+    {"slug": "earrings", "label": "Cape Cod Earrings"},
+    {"slug": "necklaces", "label": "Cape Cod Necklaces"},
+    {"slug": "rings", "label": "Cape Cod Rings"}
+  ]},
+  {"slug": "convertibles",
+  "label": "Convertible Collection",
+  "items": [
+    {"slug": "birthstones", "label": "Birthstone Clasps"},
+    {"slug": "bracelets", "label": "Convertible Bracelets"},
+    {"slug": "clasps", "label": "Convertible Clasps"}
+  ]},
+  {"slug": "evening-tide",
+  "label": "Evening Tide Collection",
+  "items": [
+    {"slug": "bracelets", "label": "Bracelets"},
+    {"slug": "earrings", "label": "Earrings"},
+    {"slug": "pendants", "label": "Pendants"},
+    {"slug": "rings", "label": "Rings"}
+  ]},
+  {"slug": "pre-teen",
+  "label": "Stepping Stones",
+  "items": [
+    {"slug": "bracelets", "label": "Bracelets"},
+    {"slug": "charm-bracelets", "label": "Charm Bracelets"},
+    {"slug": "earrings", "label": "Earrings"},
+    {"slug": "pendants", "label": "Pendants"}
+  ]},
+  {"slug": "chains",
+  "label": "Replacement Chains",
+  "items": [
+    {"slug": "rolo", "label": "Rolo Chains"},
+    {"slug": "rope", "label": "Rope Chains"},
+    {"slug": "box", "label": "Box Chains"},
+    {"slug": "snake", "label": "Snake Chains"}
+  ]}
+]},
+  {"slug": "about", "label": "About Us", "items": [
+  {"slug": "ethics", "label": "Our Ethics"},
+  {"slug": "story", "label": "Our Story"},
+  {"slug": "tradeshows", "label": "Tradeshows"},
+  {"slug": "warranty", "label": "Warranty"}
+]},
+{"slug": "resources", "label": "Resources", "items": [
+  {"slug": "catalogs", "label": "Catalogs"},
+  {"slug": "advertising", "label": "Advertising"},
+  {"slug": "retail", "label": "Retail Sheets"},
+  {"slug": "sizing", "label": "Sizing Information"}
+]},
+{"slug": "contact", "label": "Contact Us", "items": [
+  {"slug": "employment", "label": "Employment Opportunities"},
+  {"slug": "credit", "label": "Apply For Credit Line"},
+  {"slug": "new-account", "label": "Open a New Account"},
+  {"slug": "warranty", "label": "All Other Questions"}
+]}
+]

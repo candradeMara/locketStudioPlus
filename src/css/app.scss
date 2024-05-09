@@ -1,0 +1,151 @@
+// app global css in SCSS form
+@import "mixins";
+@import "aos/src/sass/aos";
+
+@font-face {
+  font-family: "Oswald", sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  font-stretch: 25% 151%;
+  src: url(./fonts/Oswald-200.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Oswald", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  font-stretch: 25% 151%;
+  src: url(./fonts/Oswald-600.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Garamond";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  font-stretch: 25% 151%;
+  src: url(./fonts/Garamond.woff) format("woff");
+}
+// @font-face {
+//   font-family: 'Newsreader';
+//   font-style: normal;
+//   font-weight: 200;
+//   font-display: swap;
+//   src: url(./fonts/Newsreader.woff2) format('woff2');
+//   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+// }
+// @font-face {
+//   font-family: 'Newsreader';
+//   font-style: normal;
+//   font-weight: 600;
+//   font-display: swap;
+//   src: url(./fonts/Newsreader.woff2) format('woff2');
+//   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+// }
+
+html,
+body {
+  background: rgb(240, 235, 235);
+}
+
+.unstyled {
+  list-style-type: none;
+  li {
+    list-style-type: none;
+    padding: 0;
+  }
+}
+
+
+
+.font-default {
+  @include font-default;
+}
+.font-accent {
+  @include font-accent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-h1,
+.text-h2,
+.text-h3,
+.text-h4,
+.text-h5,
+.text-h6 {
+  @include font-accent;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+a {
+  @include text-link;
+}
+p a {
+  @include text-link-decoration;
+}
+
+.encoded-link {
+  @include text-link;
+  @include text-link-decoration;
+  margin-left: 0.5rem;
+}
+
+.heading-center {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+}
+
+.q-item__label--header {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.q-item.q-router-link--active {
+  color: $dark;
+}
+.q-carousel {
+  background-color: inherit;
+  // padding-bottom: 3rem;
+}
+
+.q-separator,
+.clear {
+  clear: both;
+}
+
+sup,
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  // vertical-align: super;
+  top: -0.5em;
+}
+sub {
+  // vertical-align: sub;
+  bottom: -0.25em;
+}
+
+.q-notifications__list--top {
+  margin-top: 50px;
+}
+
+ul, ol {
+  list-style-position: outside;
+  padding-left: 1rem;
+}
