@@ -1,25 +1,6 @@
 <template>
   <q-page>
-    <div class="justify-center">
-      <q-carousel v-model="slide" animated arrows navigation infinite>
-        <q-carousel-slide
-          :name="1"
-          img-src="https://cdn.quasar.dev/img/mountains.jpg"
-        />
-        <q-carousel-slide
-          :name="2"
-          img-src="https://cdn.quasar.dev/img/parallax1.jpg"
-        />
-        <q-carousel-slide
-          :name="3"
-          img-src="https://cdn.quasar.dev/img/parallax2.jpg"
-        />
-        <q-carousel-slide
-          :name="4"
-          img-src="https://cdn.quasar.dev/img/quasar.jpg"
-        />
-      </q-carousel>
-    </div>
+
 
     <lorem add="2p" class="q-pa-md row q-ma-md" />
     <div class="q-gutter-md row justify-center">

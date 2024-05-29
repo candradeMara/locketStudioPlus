@@ -79,7 +79,7 @@ export const sendEmailNewOrder = async (emailData) => {
       to: emailData.buyer.email,
       cc: [process.env.ORDERS_EMAIL, process.env.ROGER_EMAIL, process.env.GUY_EMAIL, process.env.HUNTER_EMAIL],
       from: process.env.SENDGRID_EMAIL,
-      subject: "New Marathon Order",
+      subject: "New Locket Studio Order",
       templateId: process.env.SENDGRID_TEMPLATE_ORDER,
       dynamicTemplateData: { ...emailData },
     };
@@ -110,7 +110,7 @@ export const sendEmailShippedOrder = async (emailData) => {
     const messageData = {
       to: emailData.buyer.email,
       from: process.env.SENDGRID_EMAIL,
-      subject: "Marathon Order Has Been Shipped",
+      subject: "Locket Studio Order Has Been Shipped",
       templateId: process.env.SENDGRID_TEMPLATE_SHIPPED,
       dynamicTemplateData: { ...emailData },
     };

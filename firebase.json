@@ -1,13 +1,7 @@
 {
   "hosting": {
-    "redirects": [
-      {
-        "source": "www.marathon-co.com",
-        "destination": "https://marathon-co.com",
-        "type": 301
-      }
-    ],
-    "public": "dist/pwa",
+    "redirects": [],
+    "public": "dist/spa",
     "ignore": [
       "firebase.json",
       "**/.*",

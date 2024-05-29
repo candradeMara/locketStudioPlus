@@ -9,7 +9,7 @@
       "
       :key="chip.slug"
       removable
-      color="primary"
+      color="pink-1"
       text-color="white"
       :label="chip.label"
       @remove="removeFilterBySlug(chip.slug)"
@@ -85,7 +85,7 @@ export default defineComponent({
   async setup(props, { emit }) {
     const appStore = useAppStore();
     const { getFilter } = storeToRefs(appStore);
-
+    console.log(getFilter);
     const removeFilterBySlug = (slug) => {
       //emit change to selectedFilters
       // remove before emitting

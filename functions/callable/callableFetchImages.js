@@ -24,12 +24,14 @@ export default async (request) => {
               skip: skip,
             })
             .then((response) => {
+              console.log("Hunter Test");
               if (Array.isArray(response) && response.length > 0) {
                 const transformedFiles = response.map(file => ({
                   ...file,
-                  url: `${file.url}?tr=l-image_${overlayImage},l-end` // Appends the overlay/watermark transformation
+                  // Update the URL to include the watermark with additional transformations
+                  url: `${file.url}?tr=l-image,i-watermark@@watermark.png,w-iw,h-ih,c-at_max,ar-iar,x-10,y-10,l-end`
                 }));
-                allFiles = [...allFiles, ...transformedFiles];
+                allFiles = [...allFiles, ...response];
                 skip += limit;
               } else {
                 hasMore = false;

@@ -54,7 +54,6 @@ export default async (change, context) => {
         if (newUserData.verified == true) {
           createNewAccount({ account, business, addresses });
           console.log("updating VERIFIED", newUserData);
-          // user has been verified by Marathon
           // upgrade the user claims and create/update the doc under /accounts/account/users/user
           await setUserClaims(uid, role, account)
             .then(async () => {

@@ -40,4 +40,4 @@ jobs:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MARATHONCO_1893 }}"
           channelId: live
-          projectId: marathonco-1893
+          projectId: locketStudioPlus

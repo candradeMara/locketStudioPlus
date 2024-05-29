@@ -65,7 +65,7 @@ const routes = [
   {
     path: "/products",
     meta: {
-      requiresAuth: true,
+      requiresAuth: false,
     },
 
     component: () => import("layouts/MainLayout.vue"),
@@ -102,7 +102,7 @@ const routes = [
   {
     path: "/product",
     meta: {
-      requiresAuth: true,
+      requiresAuth: false,
     },
     component: () => import("layouts/MainLayout.vue"),
     children: [
@@ -118,7 +118,7 @@ const routes = [
   {
     path: "/",
     meta: {
-      requiresAuth: true,
+      requiresAuth: false,
     },
     component: () => import("layouts/MainLayout.vue"),
     children: [

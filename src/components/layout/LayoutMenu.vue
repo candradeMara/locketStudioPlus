@@ -8,15 +8,11 @@
     <q-tabs
       v-model="secondaryTab"
       dense
-      class="bg-primary text-dark header-menu"
+      class="bg-red-2 text-dark header-menu"
     >
-      <q-tab v-show="isLoggedIn" name="products" label="Products" />
+
       <q-tab
         v-for="tab in getMenu"
-        v-show="
-          (!tab.requiresAuth || isLoggedIn) &&
-          (!tab.requiresAdmin || isAccountAdmin)
-        "
         :key="tab"
         :name="tab.label"
         :label="tab.label"

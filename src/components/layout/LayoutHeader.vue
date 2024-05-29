@@ -1,12 +1,14 @@
 <template>
   <q-scroll-observer axis="vertical" @scroll="onScroll" />
-  <q-header id="header" class="text-white bg-dark" height-hint="50">
-    <q-toolbar class="toolbar justify-center bg-dark" :class="{
+  <q-header id="header" class="text-white bg-pink-1" height-hint="50">
+    <q-toolbar
+class="toolbar justify-center bg-pink-1" :class="{
     scrolled: scrollPositionY >= 220 || $q.screen.lt.md,
     intermediate: scrollPositionY > 50 && scrollPositionY < 220,
   }">
       <transition appear enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-        <router-link v-show="scrollPositionY > 120 || showLogo || $q.screen.lt.md" to="/"
+        <router-link
+v-show="scrollPositionY > 120 || showLogo || $q.screen.lt.md" to="/"
           style="max-height: 50px; display: flex; align-items: center">
           <img src="~assets/img/logo-small.svg" class="logo" style="max-width: calc(100vw - 180px)" />
         </router-link>
@@ -17,7 +19,8 @@
           <q-tooltip> Search </q-tooltip>
         </q-btn>
         <dialog-search v-model:is-open="isSearchOpen" />
-        <q-btn v-if="isLoggedIn && !isGuest" to="/account" flat dense icon="person"
+        <q-btn
+v-if="isLoggedIn && !isGuest" to="/account" flat dense icon="person"
           :label="$q.screen.gt.sm ? userData.name : ''">
           <q-tooltip>
             <div class="column text-center">

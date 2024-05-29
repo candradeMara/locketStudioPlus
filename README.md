@@ -1,4 +1,4 @@
-# Marathon (marathon)
+# locketstudioplus (locketstudioplus)
 
 ## Install the dependencies
 

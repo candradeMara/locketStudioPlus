@@ -22,7 +22,7 @@ service cloud.firestore {
       return request.auth.token.role;
     }
     function getAuthId() {
-      return request.auth.uid
+      return request.auth.uid;
     }
     function getAccount() {
       return request.auth.token.account;
@@ -34,10 +34,10 @@ service cloud.firestore {
     //   return request.auth.token.email_verified;
     // }
     function isAccountAdmin() {
-      return getRole() == 'account_admin' || getRole() == 'marathon_admin'
+      return getRole() == 'account_admin' ;
     }
     function isAdmin() {
-      return getRole() == 'marathon_admin' || (getRole() == 'account_admin'  && getAccount() == 'marathon')
+      return getRole() == getRole() == 'account_admin';
     }
     function allowCreateFields(fields) {
       return incomingData().keys().hasOnly(fields);
@@ -55,8 +55,8 @@ service cloud.firestore {
 
     // Products
     match /products/{productId} {
-      allow read: if isSignedIn();
-      allow write: if isAdmin();
+      allow read;
+      allow write;
     }
 
     // Accounts

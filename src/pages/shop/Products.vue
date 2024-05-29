@@ -119,6 +119,9 @@ export default defineComponent({
       process.env.ALGOLIA_APP,
       process.env.ALGOLIA_PUBLIC
     );
+
+    console.log(process.env.FIREBASE_API_KEY+" "+process.env.IMAGEKIT_PUBLIC);
+    console.log(process.env.ALGOLIA_APP+" "+process.env.ALGOLIA_PUBLIC);
     const categories = ref([]);
     const products = ref([]);
     const isFilterOpen = ref(false);
@@ -134,9 +137,6 @@ export default defineComponent({
     const perPageOptions = ref([20, 40, 60]);
     const queryString = window.location.search;
     var sortBy = ref({ value: "products", label: "SKU" });
-    if (queryString == "?bestsellers") {
-      sortBy = ref({ value: "featured", label: "Best Sellers", descending: true });
-    }
 
 
     const pagination = ref({
@@ -148,6 +148,7 @@ export default defineComponent({
     });
 
     const fetchProducts = async () => {
+
       const { page, rowsPerPage } = pagination.value;
 
       const index = searchClient.initIndex(sortBy.value.value);
@@ -166,7 +167,7 @@ export default defineComponent({
 
       await index
         .search(query, {
-          filters: filterString,
+          //filters: filterString,
           hitsPerPage: rowsPerPage,
           page: page - 1,
           facets: ["*"],

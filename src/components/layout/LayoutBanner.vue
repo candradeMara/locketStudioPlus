@@ -1,45 +1,11 @@
 <template>
-  <div class="bg-dark full-width text-center logos q-pb-sm q-px-md">
-    <div class="div1">
-      <router-link to="/products/adult">
-        <img src="~assets/img/logo-adult-essentials.svg" />
-      </router-link>
-    </div>
-    <div class="div2">
-      <router-link to="/products/children">
-        <img src="~assets/img/logo-kiddie-kraft.png" />
-      </router-link>
-    </div>
-    <div class="div3">
-      <a href="https://locketstudio.com" target="_blank">
-        <img src="~assets/img/logo-locket-studio.svg" />
-      </a>
-    </div>
+  <div class="full-width text-center logos q-pb-sm q-px-md">
     <div class="div4">
       <router-link to="/">
-        <img src="~assets/img/logo.svg" />
+        <img src="~assets/img/LocketStudioMain.png" />
       </router-link>
     </div>
-    <div class="div5">
-      <router-link to="/products/capeCod">
-        <img src="~assets/img/logo-cape-cod-collection.svg" />
-      </router-link>
-    </div>
-    <div class="div6">
-      <router-link to="/products/convertibleCollection">
-        <img src="~assets/img/logo-convertible-collection.svg" />
-      </router-link>
-    </div>
-    <div class="div7">
-      <router-link to="/products/eveningTide">
-        <img src="~assets/img/logo-evening-tide-collection.svg" />
-      </router-link>
-    </div>
-    <div class="div8">
-      <a href="https://lestage.com" target="_blank">
-        <img src="~assets/img/logo-lestage.svg" />
-      </a>
-    </div>
+
   </div>
 </template>
 <script>
@@ -91,8 +57,8 @@ div.div4 {
   grid-area: 1 / 2 / 4 / 3;
 
   img {
-    max-height: 270px;
-    width: 90%;
+    max-height: 180px;
+    width: 70%;
   }
 }
 

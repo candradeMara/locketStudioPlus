@@ -4,7 +4,7 @@
       <template #fallback>
         <q-skeleton height="37.25vw" />
       </template>
-      <carousel-home v-if="!isLoggedIn" />
+
     </suspense>
   </div>
   <div class="row justify-center">
@@ -29,7 +29,7 @@
     </div>
   </div>
   <div class="column q-mt-md items-center">
-    <img class="building" src="~/assets/img/building.png" />
+    <img class="building" src="~assets/img/Home_HeaderImage.jpg" />
   </div>
 </template>
 
@@ -41,14 +41,10 @@ import { storeToRefs } from "pinia";
 import { db } from "src/boot/firebase";
 import { doc, getDoc } from "firebase/firestore";
 
-const CarouselHome = defineAsyncComponent(() =>
-  import("components/base/CarouselHome.vue")
-);
-
 export default defineComponent({
   name: "IndexPage",
   components: {
-    CarouselHome,
+
   },
   setup() {
     const appStore = useAppStore();

@@ -89,6 +89,8 @@ import { defineComponent, onMounted, ref, watch } from "vue";
 import { load } from "opentype.js";
 import * as C2S from "canvas2svg";
 
+//const C2S = require('canvas2svg');
+
 export default defineComponent({
   name: "DialogEngraving",
   props: {
@@ -150,7 +152,8 @@ export default defineComponent({
       }
       const ctxDemo = canvasDemo.value.getContext("2d");
       const locketImg = new Image();
-      locketImg.src = `/img/engrave/${props.engraving.engrave_code}.jpg`;
+      locketImg.src = `/img/engrave/w${props.engraving.engrave_code.toLowerCase()}.jpg`;
+
       await locketImg.decode();
 
       canvasDemo.value.width = locketImg.width;
@@ -162,6 +165,7 @@ export default defineComponent({
 
     const updateEngraving = async () => {
       await resetCanvas();
+      console.log("font:"+fontChoice.value);
       // Need to constrain final line(s) both vertically and horizontally.
       engraveText = textLines.value.filter((e) => e !== ""); // remove empty lines
       const ctxDemo = canvasDemo.value.getContext("2d");
@@ -171,6 +175,7 @@ export default defineComponent({
         const font = await load(
           `/fonts/${fontOptions.value[fontChoice.value].path}`
         );
+
 
         // get the longest line
         let longestLine = 0;
@@ -202,6 +207,7 @@ export default defineComponent({
         const engraveHeight =
           tallestLine * engraveText.length - bottomDiff - topDiff;
         // const engraveHeight = tallestLine * engraveText.length;
+        console.log("w:"+engraveWidth+" h:"+engraveHeight)
         ctxEngraving = await new C2S(engraveWidth, engraveHeight);
         ctxEngraving.strokeRect(0, 0, engraveWidth, engraveHeight); // outline for testing fitting purposes
 

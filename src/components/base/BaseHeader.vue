@@ -1,5 +1,5 @@
 <template>
-  <q-header reveal bordered class="bg-dark text-white" height-hint="98">
+  <q-header reveal bordered class="bg-orange-2 text-white" height-hint="98">
     <q-toolbar class="justify-center">
       <q-btn
         dense
@@ -10,7 +10,7 @@
         @click="toggleLeft"
       />
       <router-link to="/">
-        <img src="~assets/logo.svg" class="logo" />
+        <img src="~assets/Home_HeaderImage.jpg" class="logo" />
       </router-link>
       <div class="actions">
         <q-btn
@@ -133,7 +133,7 @@
 
   <q-drawer ref="leftDrawer" v-model="isLeftOpen" side="left" bordered>
     <q-list>
-      <q-item-label header class="text-grey-8">
+      <q-item-label header class="text-orange-7">
         {{ menu }}
       </q-item-label>
     </q-list>

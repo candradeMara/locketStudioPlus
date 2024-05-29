@@ -75,7 +75,8 @@ module.exports = configure(function (/* ctx */) {
 
       extendViteConf(viteConf, { isServer, isClient }) {
         viteConf.optimizeDeps = {
-          include: ["jszip"],
+          include: ["canvas2svg"],
+
         };
 
       },
@@ -206,7 +207,7 @@ module.exports = configure(function (/* ctx */) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: "marathon",
+        appId: "locketstudioplus",
       },
     },
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/developing-browser-extensions/configuring-bex

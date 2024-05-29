@@ -1,9 +1,9 @@
 {
-  "name": "marathon",
+  "name": "locketstudioplus",
   "version": "0.0.1",
   "description": "website",
-  "productName": "marathon",
-  "author": "AwesomeScott",
+  "productName": "locketstudioplus",
+  "author": "Carlos Andrade",
   "private": true,
   "scripts": {
     "build": "quasar build --mode pwa",
@@ -28,6 +28,7 @@
     "canvas2svg": "^1.0.16",
     "dotenv": "^16.4.5",
     "firebase": "^9.23.0",
+    "firebase-functions": "^5.0.1",
     "imagekit": "^4.1.4",
     "jszip": "^3.10.1",
     "opentype.js": "^1.3.4",
@@ -63,6 +64,6 @@
     "yarn": ">= 1.21.1"
   },
   "main": "index.js",
-  "repository": "git@github.com:marathonco/marathoncosite.git",
+  "repository": "git@github.com:candradeMara/locketStudioPlus.git",
   "license": "MIT"
 }
